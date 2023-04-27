@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = '17'
+targetCompatibility= '17'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+//Creates javadoc and sources jars
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:19.0.0'
+    testImplementation group: 'junit', name: 'junit', version: '4.13'
+    implementation group: 'org.openscience.cdk', name: 'cdk-bundle', version: '2.7.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+javafx {
+    version = '17.0.2'
+    modules = ['javafx.controls', 'javafx.swing']
+}
+mainClassName = 'de.whs.ibci.LPSchaten.Main'
+
