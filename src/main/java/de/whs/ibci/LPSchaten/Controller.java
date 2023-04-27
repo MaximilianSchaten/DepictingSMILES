@@ -29,6 +29,9 @@ public class Controller {
          */
         view.getbDepict().setOnAction(e -> {
             String smiles = view.getSmilesInput().getText();
+            if (smiles == null){
+                throw new IllegalArgumentException("String smiles cannot be null");
+            }
 
             try {
                 view.setImageView(model.getSmilesStructure(smiles));
