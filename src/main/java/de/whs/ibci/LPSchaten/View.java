@@ -177,6 +177,10 @@ public class View {
      */
     public void setImageView(Image img1) {
         this.imageView.setImage(img1);
+
+        if (img1 == null){
+            throw new IllegalArgumentException("Image cannot be null");
+        }
     }
 
     /**

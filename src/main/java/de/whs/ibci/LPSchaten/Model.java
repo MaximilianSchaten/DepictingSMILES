@@ -56,6 +56,10 @@ public class Model {
      */
     public Image getSmilesStructure(String smiles) throws CDKException {
 
+        if (smiles == null || smiles.isEmpty()){
+            throw new IllegalArgumentException("SMILES is not a String");
+        }
+
         this.objectBuilder = SilentChemObjectBuilder.getInstance();
         this.smilesParser = new SmilesParser(objectBuilder);
         this.depictionGeneratorZoom = 3;

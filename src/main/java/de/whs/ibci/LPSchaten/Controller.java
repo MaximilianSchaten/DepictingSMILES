@@ -14,6 +14,15 @@ public class Controller {
      * @param model
      */
     public Controller(View view, Model model) {
+        /**
+         * parameter checks for the view and model
+         */
+        if (view == null) {
+            throw new IllegalArgumentException("View cannot be null");
+        }
+        if (model == null) {
+            throw new IllegalArgumentException("Model cannot be null");
+        }
 
         /**
          Action to depict SMILES
